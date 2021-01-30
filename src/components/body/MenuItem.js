@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardImage, CardImgOverlay, CardBody, CardTitle } from 'reactstrap';
-import CardImg from 'reactstrap/lib/CardImg';
+import { Card, CardImg, CardImgOverlay, CardBody, CardTitle } from 'reactstrap';
+// import CardImg from 'reactstrap/lib/CardImg';
 
 const MenuItem = props => {
     return (
@@ -13,7 +13,12 @@ const MenuItem = props => {
                 src={props.dish.image} 
                 style={ {opacity: "0.5"} }/>
                 <CardImgOverlay>
-                    <CardTitle>{props.dish.name}</CardTitle>
+                    <CardTitle 
+                    style={{ cursor: "pointer" }} 
+                    onClick={props.DishSelect}
+                    >
+                        {props.dish.name}
+                    </CardTitle>
                 </CardImgOverlay>
             </CardBody>
         </Card>
